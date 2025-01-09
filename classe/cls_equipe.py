@@ -6,8 +6,9 @@ class Equipe:
         self.membre = MEMBRE
 
     def composition(self):
-        for membre in self.membre:
-            ic(membre)
+        for membre, i in enumerate(self.membre, 1):
+            ic("Membre", membre, i)
+            print(f"Membre_{membre}: {i}")
 
 if __name__ == "__main__":
     hero = Equipe("alliance grg", ["toto", "polo", "pierre", "jacque"])
