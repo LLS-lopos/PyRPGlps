@@ -1,15 +1,10 @@
 def arrondire(entier, facteur):
     calcul = entier * facteur
-    text_calcul = str(calcul)
-    text_entier = text_calcul.split(".")[0]
-    text_reste = text_calcul.split(".")[1]
-    resultat = int(text_entier)
-    if text_reste.isdigit:
-        if int(text_reste[0]) >= 5:
-            resultat += 1
-            
+    resultat = int(str(calcul).split(".")[0])
+    if str(calcul).split(".")[1].isdigit:
+        if int(str(calcul).split(".")[1]) >= 5: resultat += 1
     return resultat
 
 if __name__ == "__main__":
-    arrondire(7, 0.2)
-    arrondire(7, 0.4)
+    print(arrondire(7, 0.2))
+    print(arrondire(7, 0.4))
