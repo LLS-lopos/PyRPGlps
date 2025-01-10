@@ -100,16 +100,6 @@ class Guerrier(Personnage):
             
 
 if __name__ == "__main__":
-    Dai = Personnage("Daï", 12, 5, 6, 8)
-    Croco = Personnage("Dino", 20, 2, 4, 12)
-    Polo = Guerrier("Polo")
-    """
-    for i in range(4):
-        Polo.attaquer(Croco)
-    Polo.niveau_sup()
-    Polo.niveau_sup()
-    Polo.sauvegarder_donner()
-    """
-    Polo.__str__()
-    Polo.chager_donner()
-    Polo.__str__()
+    Joueur = Personnage("Player", 20, 3, 2, 4)
+    Joueur.__str__()
+    Joueur.sauvegarder_donner()
