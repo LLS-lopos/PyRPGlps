@@ -1,0 +1,10 @@
+{
+    "nom": "Polo",
+    "pv": 28,
+    "att": 11,
+    "def": 14,
+    "vit": 8,
+    "exp": 6,
+    "exp_max": 106,
+    "att_critique": 6.2
+}

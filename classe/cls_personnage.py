@@ -1,5 +1,19 @@
 from random import randint
-from fonc_math import arrondire
+import json
+import pathlib
+import os
+import sys
+
+# Ajouter le dossier parent au sys.path
+dossier_parent = pathlib.Path(__file__).resolve().parent.parent
+sys.path.append(str(dossier_parent))
+
+from module.fonc_math import arrondire
+from module.fonc_sauve_charger import charger, enregistrer
+
+registre = pathlib.Path(dossier_parent/"donner/")
+json_player = os.path.join(registre, 'player.json')
+
 
 class Personnage:
     def __init__(self, NOM, PV, ATT, DEF, VIT):
@@ -52,6 +66,11 @@ class Personnage:
             self.stats["att"] = self.stats["att"] + arrondire(self.stats["att"], self.stats["att_critique"])
             return self.stats["att"]
 
+    def sauvegarder_donner(self):
+        enregistrer(json_player, self.stats)
+    def chager_donner(self):
+        self.stats = charger(json_player)
+
 class Guerrier(Personnage):
     def __init__(self, NOM="", PV=20, ATT=7, DEF=8, VIT=3):
         Personnage.__init__(self, NOM, PV, ATT, DEF, VIT)
@@ -84,5 +103,13 @@ if __name__ == "__main__":
     Dai = Personnage("Daï", 12, 5, 6, 8)
     Croco = Personnage("Dino", 20, 2, 4, 12)
     Polo = Guerrier("Polo")
+    """
     for i in range(4):
         Polo.attaquer(Croco)
+    Polo.niveau_sup()
+    Polo.niveau_sup()
+    Polo.sauvegarder_donner()
+    """
+    Polo.__str__()
+    Polo.chager_donner()
+    Polo.__str__()
